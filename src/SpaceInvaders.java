@@ -16,7 +16,10 @@ import javax.swing.JPanel;
 public class SpaceInvaders extends Canvas implements Stage, KeyListener {
 
 	/**
-	 * 
+	 * Mohammed Faisal Qureshi
+	 * Mark Percy
+	 * Jack Procter
+	 * Jessica Wolfenden
 	 */
 	private static final long serialVersionUID = 1L;
 	private BufferStrategy strategy;
@@ -64,7 +67,7 @@ public class SpaceInvaders extends Canvas implements Stage, KeyListener {
 
 		player = new Player(this);
 		player.setX(Stage.WIDTH / 2);
-		//player.setY(Stage.HEIGHT - 2 * player.getHeight());
+		//player.setY(Stage.HEIGHT - 2 * player.getHeight()); //Reconfigure to Work with monster size
 	}
 
 	public void addActor(Actor a) {

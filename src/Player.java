@@ -1,4 +1,3 @@
-import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
@@ -8,14 +7,14 @@ public class Player implements KeyListener{
 	
 	private int XPos = 100;
 	private int YPos = 100;
-	private int RAND = 100;
+	//private int Random = 100;
 	private int Height;
 	private int Width;
 	private int currentPos;
-	private int PlayerLives = 3;
+	//private int PlayerLives = 3;
 	
 	public Player(SpaceInvaders spaceInvaders) {
-		// TODO Auto-generated constructor stub
+
 	}
 	
 	public Player() {
@@ -62,7 +61,6 @@ public class Player implements KeyListener{
 	}
 
 	public void collision(Actor a1) {
-		// TODO Auto-generated method stub
 		
 	}
 

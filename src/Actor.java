@@ -24,7 +24,7 @@ public class Actor {
 	}
 
 	public void paint(Graphics2D g) {
-		
+		g.drawImage(Stage.Monster, Monster.X, Monster.Y,SpriteCache.Image.getWidth() * 5,SpriteCache.Image.getHeight() * 5, null);
 	}
 
 }

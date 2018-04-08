@@ -24,6 +24,7 @@ public class SpaceInvaders extends Canvas implements Stage, KeyListener {
 	private static final long serialVersionUID = 1L;
 	private BufferStrategy strategy;
 	private long usedTime;
+	private long score = 0;
 
 	private SpriteCache spriteCache;
 	private ArrayList actors;
@@ -68,7 +69,7 @@ public class SpaceInvaders extends Canvas implements Stage, KeyListener {
 		player = new Player(this);
 		player.setX(Stage.WIDTH / 2);
 		//player.setY(Stage.HEIGHT - 2 * player.getHeight()); //Reconfigure to Work with monster size
-	}
+			}
 
 	public void addActor(Actor a) {
 		actors.add(a);
@@ -121,9 +122,16 @@ public class SpaceInvaders extends Canvas implements Stage, KeyListener {
 
 		g.setColor(Color.white);
 		if (usedTime > 0)
-			g.drawString(String.valueOf(1000 / usedTime) + " fps", 0, Stage.HEIGHT - 50);
+			g.drawString(String.valueOf(1000 / usedTime) + " fps", 0, Stage.HEIGHT - 480);
 		else
-			g.drawString("--- fps", 0, Stage.HEIGHT - 50);
+			g.drawString("--- fps", 0, Stage.HEIGHT - 480);
+		//*Jack*//
+		g.setColor(Color.white);
+		g.drawString("Press the ARROW keys to move & SPACE to fire", 0, Stage.HEIGHT - 30);
+		
+		g.setColor(Color.white);
+		g.drawString(String.valueOf(score) + " points",  0, Stage.HEIGHT - 40);
+		
 		strategy.show();
 	}
 
@@ -160,6 +168,12 @@ public class SpaceInvaders extends Canvas implements Stage, KeyListener {
 			} catch (InterruptedException e) {
 			}
 		}
+	}
+	
+	//*Jack*//
+	//This will reset the program, including variables//
+	public void resetGame() {
+		inv.game();
 	}
 
 	public static void main(String[] args) {

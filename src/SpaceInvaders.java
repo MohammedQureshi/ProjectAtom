@@ -173,7 +173,7 @@ public class SpaceInvaders extends Canvas implements Stage, KeyListener {
 	//*Jack*//
 	//This will reset the program, including variables//
 	public void resetGame() {
-		inv.game();
+		game();
 	}
 
 	public static void main(String[] args) {

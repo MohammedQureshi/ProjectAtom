@@ -3,10 +3,10 @@ import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class Player implements KeyListener{
+public class Player extends Actor implements KeyListener{
 	
-	private int XPos = 100;
-	private int YPos = 100;
+	private int XPos = 0;
+	private int YPos = 380;
 	//private int Random = 100;
 	private int Height;
 	private int Width;
@@ -81,7 +81,7 @@ public class Player implements KeyListener{
 			currentPos = XPos;
 		}
 		if (key.getKeyCode() == KeyEvent.VK_SPACE) {
-			/*Fire Bullet*/
+			//FIRE//
 		}
 		
 	}
@@ -94,8 +94,5 @@ public class Player implements KeyListener{
 
 	public void keyTyped(KeyEvent key) {
 		
-		
 	}
-	
-
 }

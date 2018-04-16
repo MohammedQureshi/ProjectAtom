@@ -1,6 +1,7 @@
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
-public class Bullet extends Player {
+public class Bullet extends Player implements KeyListener {
 
 	int bulletY;
 	int bulletX;
@@ -10,8 +11,8 @@ public class Bullet extends Player {
 	//*Jack*//
 	public Bullet() {
 		if (playerfire == true) {
+			getX();
 			bulletY ++;
-			
 		}
 		
 	}

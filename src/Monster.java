@@ -41,7 +41,7 @@ public class Monster extends Actor {
 			int  n = rand.nextInt(10) + 1;
 			if (n == Firevalue) {
 				System.out.println(n);
-				//delay(1000);//
+				//delay(1000);
 				//Fire bullet//
 			}
 			
@@ -79,5 +79,4 @@ public class Monster extends Actor {
 				e.printStackTrace();
 			}
 		}
-
 }

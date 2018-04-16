@@ -8,7 +8,6 @@ public class Actor {
 	}
 
 	public void act() {
-		
 	}
 
 	public Rectangle getBounds() {
@@ -24,7 +23,9 @@ public class Actor {
 	}
 
 	public void paint(Graphics2D g) {
-		g.drawImage(Stage.Monster, Monster.X, Monster.Y,SpriteCache.Image.getWidth() * 5,SpriteCache.Image.getHeight() * 5, null);
+		g.drawImage(Stage.Monster, SpriteCache.Image.getWidth() * 5,SpriteCache.Image.getHeight() * 5, null);
+		g.drawImage(Stage.Monster, SpriteCache.Image.getWidth() * 5,SpriteCache.Image.getHeight() * 10, null);
+		g.drawImage(Stage.Monster, SpriteCache.Image.getWidth() * 10,SpriteCache.Image.getHeight() * 5, null);
 	}
 
 }

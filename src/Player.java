@@ -72,16 +72,26 @@ public class Player extends Actor implements KeyListener{
 
 	public void keyPressed(KeyEvent key) {
 		/* Mohammed */
-		if(key.getKeyCode() == KeyEvent.VK_LEFT) { 
-			XPos -= 10;
-			currentPos = XPos;
+		if(key.getKeyCode() == KeyEvent.VK_LEFT) {
+			if (XPos == 0) {
+				XPos -=0;
+			}
+			else {
+				XPos -= 10;
+				currentPos = XPos;
+			}
 		}
 		if (key.getKeyCode() == KeyEvent.VK_RIGHT) {
-			XPos += 10;
-			currentPos = XPos;
+			if (XPos >= Stage.WIDTH - 61) {
+				XPos +=0;
+			}
+			else {
+				XPos += 10;
+				currentPos = XPos;
+			}
 		}
 		if (key.getKeyCode() == KeyEvent.VK_SPACE) {
-			//FIRE//
+			Bullet.playerfire = true;
 		}
 		
 	}

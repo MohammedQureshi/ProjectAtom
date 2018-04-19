@@ -56,16 +56,16 @@ public class Player extends Actor  implements KeyListener{
 			}
 		}
 		if (key.getKeyCode() == KeyEvent.VK_SPACE) {
-			System.out.println(currentPos);
-			new Bullet();
-
+			System.out.println(XPos);
+			new Bullet(XPos);
+			Score.Cscore++;
 		}
 	}
 	
 	/* Mohammed */
-	public void keyReleased(KeyEvent key) {
-		XPos = currentPos;
-	}
+//	public void keyReleased(KeyEvent key) {
+//		XPos = currentPos;
+//	}
 	
 	
 
@@ -114,5 +114,11 @@ public class Player extends Actor  implements KeyListener{
 	}
 
 	public void act() {
+	}
+
+	@Override
+	public void keyReleased(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
@@ -6,7 +7,7 @@ import java.awt.event.KeyListener;
 public class Player extends Actor  implements KeyListener{
 	
 	protected int XPos;
-	private int YPos = 380;
+	protected static int YPos = 380;
 	//private int Random = 100;
 	private int Height;
 	private int Width;
@@ -54,11 +55,15 @@ public class Player extends Actor  implements KeyListener{
 				XPos += 10;
 				currentPos = XPos;
 			}
+			Bullet bullet = new Bullet();
+			System.out.println("T:"+bullet.getY());
 		}
 		if (key.getKeyCode() == KeyEvent.VK_SPACE) {
 			System.out.println(XPos);
-			new Bullet(XPos);
 			Score.Cscore++;
+			new Bullet();
+						
+
 		}
 	}
 	

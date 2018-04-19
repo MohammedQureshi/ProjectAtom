@@ -14,36 +14,42 @@ public class Actor {
 		return false;
 	}
 	
-	/* Mohammed */
+	/* Mohammed -- Mark */
 	public static void movement() {
-		if (movementDirection == 1) {
+		if (movementDirection == 1 && X != 57 ) {
 			wait += 1;
 			if(wait == 1000) {
-				X += 1;
+				X += 3;
 				wait = 0;
+				System.out.print(X+" ");
 			}
-		} else if (movementDirection == -1) {
-			if(wait == 1000) {
-				X -= 1;
+		} 
+		else if (movementDirection == 1 && X == 57) {
+			wait+=1;	
+			if (wait==1000) {
+				System.out.print("y = " +Y +" ");
+				Y += 10;
 				wait = 0;
+				movementDirection = -1;
 			}
-		} else {
-			X = 0;
-			Y = 0;
 		}
-//		if(X == 700) {
-//			wait += 1;
-//			if(wait == 1000) {
-//				Y += 5;
-//				movementDirection = -1;
-//			}
-//		}else if(X == 0) {
-//			wait += 1;
-//			if(wait == 1000) {
-//				Y += 5;
-//				movementDirection = 1;
-//			}
-//		}
+		else if (movementDirection == -1 && X !=0) {
+			wait+=1;
+			if(wait == 1000) {
+				X -= 3;
+				System.out.print(X+" ");
+				wait = 0;
+			}
+		} 
+		else if (movementDirection == -1 && X == 0) {
+			wait+=1;
+			if (wait==1000) {
+				System.out.print("y = " +Y +" ");
+				Y += 10;
+				wait = 0;
+				movementDirection = 1;
+			}
+		}
 	}
 
 	public void act() {

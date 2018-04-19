@@ -91,6 +91,12 @@ public class SpaceInvaders extends Canvas implements Stage, KeyListener {
 	}
 
 	public void checkCollisions() {
+		
+		try {
+            
+        
+		
+		
 		Rectangle playerBounds = player.getBounds();
 		for (int i = 0; i < actors.size(); i++) {
 			Actor a1 = (Actor) actors.get(i);
@@ -108,6 +114,10 @@ public class SpaceInvaders extends Canvas implements Stage, KeyListener {
 				}
 			}
 		}
+		
+		} catch (NullPointerException e) {
+            System.out.print("Caught the NullPointerException");
+        }
 	}
 	public void paintWorld() {
 		Graphics2D g = (Graphics2D) strategy.getDrawGraphics();
@@ -165,7 +175,7 @@ public class SpaceInvaders extends Canvas implements Stage, KeyListener {
 			long startTime = System.currentTimeMillis();
 			updateWorld();
 
-			//checkCollisions();
+			checkCollisions();
 
 			paintWorld();
 

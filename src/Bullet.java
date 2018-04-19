@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Bullet extends Player implements KeyListener {
 
-	private static int bulletY;
+	private static int bulletY = YPos;
 	private int bulletX;
 	//public static boolean playerfire = false;
 	//private List<Bullet> bullets = new ArrayList<Bullet>();
@@ -14,18 +14,25 @@ public class Bullet extends Player implements KeyListener {
 	
 	//private Player p = new Player();
 	
+	public Bullet() {
+		System.out.println(bulletY);
+		if(bulletY  <= 0) {	
+			setbulletY(YPos);	
+		}
+	}
+	
 	public Bullet(int XPos) {
-		//System.out.println(p.getCurrentPos());
+		//System.out.println(p.getCurrentPos());	
 			bulletX = XPos;
 			System.out.print(bulletX);
-			bulletY ++;
+			bulletY--;
 		if (bulletY >= Stage.HEIGHT - 61) {
 			isMarkedForRemoval();
 		}
 	}
 	
 	public void paint(Graphics2D g) {
-		g.drawImage(Stage.Bullet, bulletX, bulletY,SpriteCache.Image2.getWidth() * 5,SpriteCache.Image2.getHeight() * 5, null);
+		g.drawImage(Stage.Bullet, bulletX + 20, bulletY,SpriteCache.Image2.getWidth() * 5,SpriteCache.Image2.getHeight() * 5, null);
 	}
 	
 	//Setters & getters//

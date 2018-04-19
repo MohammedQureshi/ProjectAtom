@@ -119,6 +119,9 @@ public class SpaceInvaders extends Canvas implements Stage, KeyListener {
 			Actor m = (Actor) actors.get(i);
 			m.paint(g);
 		}
+		
+		Bullet b = new Bullet(player.getX());
+		b.paint(g);
 
 		g.setColor(Color.white);
 		if (usedTime > 0)
@@ -130,7 +133,11 @@ public class SpaceInvaders extends Canvas implements Stage, KeyListener {
 		g.drawString("Press the ARROW keys to move & SPACE to fire", 0, Stage.HEIGHT - 30);
 		
 		g.setColor(Color.white);
-		g.drawString(String.valueOf(score) + " points",  0, Stage.HEIGHT - 40);
+		g.drawString(String.valueOf(Score.Cscore) + " points",  0, Stage.HEIGHT - 45);
+		
+		g.setColor(Color.white);
+		g.drawString(String.valueOf(Score.Hscore) + " High Score",  0, Stage.HEIGHT - 465);
+		
 		
 		strategy.show();
 	}

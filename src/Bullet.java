@@ -7,21 +7,25 @@ public class Bullet extends Player implements KeyListener {
 
 	private static int bulletY;
 	private int bulletX;
-	public static boolean playerfire = false;
+	//public static boolean playerfire = false;
 	//private List<Bullet> bullets = new ArrayList<Bullet>();
 	
 	//*Jack*//
 	
-	private Player p = new Player();
+	//private Player p = new Player();
 	
-	public Bullet() {
-		System.out.println(p.getCurrentPos());
-//			bulletX == XPos;
-//			System.out.print(bulletX);
-//			bulletY ++;
-//		if (bulletY >= Stage.HEIGHT - 61) {
-//			isMarkedForRemoval();
-//		}
+	public Bullet(int XPos) {
+		//System.out.println(p.getCurrentPos());
+			bulletX = XPos;
+			System.out.print(bulletX);
+			bulletY ++;
+		if (bulletY >= Stage.HEIGHT - 61) {
+			isMarkedForRemoval();
+		}
+	}
+	
+	public void paint(Graphics2D g) {
+		g.drawImage(Stage.Bullet, bulletX, bulletY,SpriteCache.Image2.getWidth() * 5,SpriteCache.Image2.getHeight() * 5, null);
 	}
 	
 	//Setters & getters//
@@ -41,8 +45,4 @@ public class Bullet extends Player implements KeyListener {
 		return bulletX;
 	}
 	
-	public void paint(Graphics2D g) {
-		/* Mohammed / Mark */
-		g.drawImage(Stage.Bullet, bulletX, bulletY,SpriteCache.Image2.getWidth() * 5,SpriteCache.Image2.getHeight() * 5, null);
-	}
 }
